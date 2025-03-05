@@ -1,8 +1,8 @@
-import config from './config.json'; // Changed to import
-import mysql from 'mysql2/promise';
-import { Sequelize } from 'sequelize';
+const config = require('config.json');
+const mysql = require('mysql2/promise');
+const { Sequelize } = require('sequelize');
 
-const db: any = {};
+module.exports = db = {};
 
 initialize();
 
@@ -21,5 +21,3 @@ async function initialize() {
   // sync all models with database
   await sequelize.sync({ alter: true });
 }
-
-export default db;
